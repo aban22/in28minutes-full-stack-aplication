@@ -1,0 +1,24 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div>
+      <a class="navbar-brand" href="https://in28minutes.com">in28minutes</a>
+    </div>
+    <ul class="navbar-nav">
+      <li>
+        <a *ngIf="harcodedAuthenticationService.isUserLoggedIn()" class="nav-link" [routerLink]="['/welcome', 'in28minutes']">Home</a>
+      </li>
+      <li>
+          <a *ngIf="harcodedAuthenticationService.isUserLoggedIn()" class="nav-link" [routerLink]="['/todos']">Todos</a>
+        </li>
+    </ul>
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+        <li>
+          <a *ngIf="!harcodedAuthenticationService.isUserLoggedIn()" class="nav-link" [routerLink]="['/login']">Login</a>
+        </li>
+        <li>
+            <a *ngIf="harcodedAuthenticationService.isUserLoggedIn()" class="nav-link" [routerLink]="['/logout']">Logout</a>
+        </li>
+    </ul>
+    
+  </nav>
+</header>
